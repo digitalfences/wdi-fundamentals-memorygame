@@ -1,11 +1,8 @@
 console.log("Up and running!");
-cards = ["queen","queen","queen","king"];
-inPlay = [];
-cardOne = cards[0];
-inPlay.push(cardOne);
-cardTwo = cards[2];
-inPlay.push(cardTwo);
-if (inPlay.length === 2){
+let cards = ["queen","queen","king","king"];
+let inPlay = [];
+
+function checkMatch(){
 	if(inPlay[0]===inPlay[1]){
 		alert("You found a match!");
 	}
@@ -13,3 +10,15 @@ if (inPlay.length === 2){
 		alert("Sorry, try again...");
 	}
 }
+
+function flipCard(cardId){
+	inPlay.push(cards[cardId]);
+	if (inPlay.length === 2){
+		chechMatch();
+	}
+}
+
+flipCard(0);
+flipCard(1);
+
+
